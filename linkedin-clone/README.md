@@ -4,6 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npx create-react-app linkedin-clone --template redux
 
+## Firebase
+
+- It will give the project a realtime backend
+- It will allow us to host the service
+
+## CloudFireStore - as a Database
+
+- Create database
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -15,6 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+## Install these tools
+
+npm install -g firebase-tools
+npm install @material-ui/core
+npm install @material-ui/icons
 
 ### `npm test`
 
