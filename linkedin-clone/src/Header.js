@@ -1,10 +1,16 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
+import HeaderOption from './HeaderOption';
+import HomeIcon from '@material-ui/icons/Home';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import ChatIcon from '@material-ui/icons/Chat';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 function Header() {
     return (
-        <div classname='header'>
+        <div className="headerMain">
             <div className="header__Left">
                 {/* image and search bar */}
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMxPvqaxd_or2KL2SiMkHRPabhfFvIRQhHZA&usqp=CAU" alt="Linkedin logo"/>
@@ -17,10 +23,14 @@ function Header() {
             </div>
 
             <div className="header__right">
-            </div>  
+                <HeaderOption Icon={HomeIcon} title='Home' />
+                <HeaderOption Icon={SupervisorAccountIcon} title='My Network' />
+                <HeaderOption Icon={BusinessCenterIcon} title='Jobs' />
+                <HeaderOption Icon={ChatIcon} title='Messaging' />
+                <HeaderOption Icon={NotificationsIcon} title='Notifications' />
+            </div>
 
-        </div>
+      </div>
     )
 }
-
-export default Header
+export default Header;
