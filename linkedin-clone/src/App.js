@@ -12,8 +12,8 @@ function App() {
         {/* App Body */}
         <div className="app__body">
             <SideBar />
-            {/* <Feed />
-            <Widgets /> */}
+             {/* <Feed /> */}
+            {/* <Widgets />  */}
         </div>
         
     </div>
