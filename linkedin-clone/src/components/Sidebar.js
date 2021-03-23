@@ -1,7 +1,7 @@
 
 import { Avatar } from '@material-ui/core';
 import React from 'react';
-import './Sidebar.css';
+import '../css/Sidebar.css';
 
 function Sidebar() {
 
