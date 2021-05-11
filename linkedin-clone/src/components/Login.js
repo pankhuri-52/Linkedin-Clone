@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/Login.css';
 
-class Login extends Component {
-    render() {
+    function Login() {
+
+        const register = () => {};
+
         return (
             <div className='login'>
-                <h1>You are not logged in right now</h1>
+                <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo.png" />
+                <form>
+                    <input placeholder="Full Name(required if registering)" type="text" />
+                    <input placeholder="Profile picture(optional)" type="text" />     
+                    <input placeholder="Email" type="email" />
+                    <input placeholder="Password" type="password" />
+                    <button>SignIn</button>
+                </form>
+                <p>Not a member? <span className="login__register">Register Now</span></p>
             </div>
         );
     }
-}
-
 export default Login;
