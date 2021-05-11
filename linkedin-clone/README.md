@@ -89,3 +89,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### authentication
 
 Stored the user inside the Redux
+
+### Structure
+
+App.js is going to render both Feed.js(has multiple Post.js components within) and Login.js
+So for that we need to pass the user object from login to upper hierarchy(i.e. to App.js)
+and then to Feed.js which causes the problem of Prop Drilling.
+*Prop Drilling* is the process by which you pass data from one part of the React Component tree to another by going through other parts that do not need the data but only help in passing it around.
+
+*How we gonna solve it* : We are going to introduce REDUX which will make a data layer around all the 
+components and we will push the user object in that layer and whichever component at any hierarchy
+requires it, can consume it at any point.
+-- The user information is going to store in UserSlice for this purpose
+

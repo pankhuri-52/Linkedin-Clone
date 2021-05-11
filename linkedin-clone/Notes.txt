@@ -1,0 +1,24 @@
+** Important Notes regarding this application and also Basics around libraries and frameworks
+ used in this application(React, HTML, CSS, Javascript, Redux, Firebase) ***
+ 
+ 1. To overcome the problem of PROP DRILLING(also called "threading") is the code pattern you create when you need to get data from one 
+	component into another by passing props multiple times through other components, we use REDUX -> It allows us to manage flow of data 
+	inside the app.
+	
+2.  (   HTML   CSS   Javascript ) -> we map them into React Library
+	((   HTML   CSS   Javascript ) React ) -> REDUX (A data layer above it that enhances our web app so that the movement of the data
+	can be done easily.
+	Redux was created by Dan Abramov for a talk.
+	
+3. reducers are functions that let you manipulate the state in features directory.
+	The synchronous and pure flow of data through Redux’s components is well-defined with distinct, simple roles. Action creators 
+	create objects → objects are dispatched to the store → the store invokes reducers → reducers generate new state → 
+	listeners are notified of state updates.
+
+4. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs
+	access to the store, and simple async logic like AJAX requests.
+	
+5. What are Thunks?
+	The precise definition of a “thunk” varies across contexts. Generally though, thunks are a functional programming technique 
+	used to delay computation. Instead of performing some work now, you produce a function body or unevaluated expression 
+	(the “thunk”) which can optionally be used to perform the work later.
