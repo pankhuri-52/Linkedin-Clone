@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, login } from 'react';
+import { useDispatch } from 'react-redux';
 import '../css/Login.css';
 import { auth } from './firebase';
 
@@ -8,6 +9,7 @@ import { auth } from './firebase';
         const [password, setPassword] = useState("");
         const [name, setName] = useState("");
         const [profilePicture, setProfilePicture] = useState("");
+        const dispatch = useDispatch();
 
         const LoginToApp = (e) => {
             // auth
@@ -18,6 +20,24 @@ import { auth } from './firebase';
             if (!name) {
                 return alert("You need to enter Full Name");
             }
+
+            auth.createUserWithEmailAndPassword(email, password) 
+            .then((userAuth) => {
+                userAuth.user.updateProfile({
+                    displayName: name,
+                    photoURL: profilePicture
+                    // displayName and photoURL are the keys of firebase database and should not be changed
+                    // now we need to dispatch this user object into the data layer to be used by other components at any hierarchy
+                })
+                .then(() => {
+                    dispatch(login({
+                        email : userAuth.user.email,
+                        uid : userAuth.user.uid,
+                        displayName : name,
+                        photourl : profilePicture
+                    }));
+                });
+            }).catch((error) => alert(error));
         };
 
         return (
