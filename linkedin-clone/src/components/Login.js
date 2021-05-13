@@ -1,7 +1,8 @@
-import React, { useState, login } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import '../css/Login.css';
 import { auth } from './firebase';
+import {login} from '../features/userSlice';
 
     function Login() {
 
@@ -25,19 +26,22 @@ import { auth } from './firebase';
             .then((userAuth) => {
                 userAuth.user.updateProfile({
                     displayName: name,
-                    photoURL: profilePicture
+                    photoURL: profilePicture,
                     // displayName and photoURL are the keys of firebase database and should not be changed
                     // now we need to dispatch this user object into the data layer to be used by other components at any hierarchy
                 })
                 .then(() => {
-                    dispatch(login({
+                    dispatch(
+                        login({
                         email : userAuth.user.email,
                         uid : userAuth.user.uid,
                         displayName : name,
-                        photourl : profilePicture
-                    }));
+                        photoUrl : profilePicture
+                    })
+                  );
                 });
-            }).catch((error) => alert(error));
+            })
+            .catch((error) => alert(error));
         };
 
         return (
