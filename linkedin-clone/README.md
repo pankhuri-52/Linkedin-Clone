@@ -102,3 +102,7 @@ components and we will push the user object in that layer and whichever componen
 requires it, can consume it at any point.
 -- The user information is going to store in UserSlice for this purpose
 
+### Animation
+
+React Flip Move  
+
