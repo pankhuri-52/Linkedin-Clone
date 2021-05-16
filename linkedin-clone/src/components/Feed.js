@@ -9,8 +9,12 @@ import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 import Post from './Post';
 import { db } from './firebase';
 import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 function Feed() {
+
+    const user = useSelector(selectUser);
 
     //React Hooks (Very powerful, used to initialize and then set to some other value)
     //server side rendering
@@ -33,10 +37,10 @@ function Feed() {
     const sendPost = event => {
         event.preventDefault();
         db.collection('posts').add({
-            name : 'Pankhuri Trikha',
-            description : 'this is a test',
+            name : user.displayName,
+            description : user.email,
             message : input,
-            photoUrl : '',
+            photoUrl : user.photoUrl || "",
             timestamp : firebase.firestore.FieldValue.serverTimestamp()
         });
 
