@@ -106,3 +106,13 @@ requires it, can consume it at any point.
 
 React Flip Move  
 
+### Firebase Connection
+
+1. Firebase Login
+2. Firebase init (Use spacebar to select and click enter)-> choose existing project -> public directory(build) -> single-page app(Y) -> we have initiased
+3. npm run build (If you do any further changes, you have to do npm run build again)
+4. firebase deploy
+
+
+
+
