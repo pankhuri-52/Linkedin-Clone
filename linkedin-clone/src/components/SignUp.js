@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import '../css/Login.css';
+import '../css/SignUp.css';
 import { auth } from './firebase';
 import {login} from '../features/userSlice';
 
-    function Login() {
+    function SignUp() {
 
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
@@ -29,8 +29,6 @@ import {login} from '../features/userSlice';
     };
 
         const register = () => {
-
-            
             if (!name) {
                 return alert("You need to enter Full Name");
             }
@@ -61,7 +59,7 @@ import {login} from '../features/userSlice';
             <div className='login'>
                 <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo.png" />
                 <form>
-                    {/* <input value={name}
+                    <input value={name}
                            onChange={(e) => setName(e.target.value)}
                            placeholder="Full Name(required if registering)" 
                            type="text" />
@@ -69,7 +67,7 @@ import {login} from '../features/userSlice';
                     <input value={profilePicture}
                            onChange={(e) => setProfilePicture(e.target.value)}
                            placeholder="Profile picture(optional)" 
-                           type="text" /> */}
+                           type="text" />
 
                     <input value={email} 
                            onChange={(e) => setEmail(e.target.value)} 
@@ -81,11 +79,10 @@ import {login} from '../features/userSlice';
                            placeholder="Password" 
                            type="password" />
 
-                    <button type='submit' onClick={LoginToApp}>Sign in</button>
+                    <button type='submit' onClick={LoginToApp}>Sign In</button>
                 </form>
-                {/* <p>Not a member?{" "}<span className="login__register" onClick={register} >Register Now</span></p> */}
-                <p>New to LinkedIn?{" "}<span className="login__register" onClick={register} >Join Now</span></p>
+                <p>Not a member?{" "}<span className="login__register" onClick={register} >Register Now</span></p>
             </div>
         );
     }
-export default Login;
+export default SignUp;
